@@ -1,0 +1,26 @@
+﻿@model Project
+
+@{
+    ViewBag.Title = "Project Details";
+    Layout = "_Layout";
+}
+
+<h2>Project Details</h2>
+<div class="card">
+    <div class="card-body">
+        
+        <h3 class="card-title">@Model.Name</h3>
+        <p class="card-text">@Model.Description</p>
+        
+        
+        <!-- Display other properties of the project as needed/desired -->
+        <dl class="row"></dl>
+        <dt class="col-sm-3">Project Id</dt>
+        <dl class="col-sm-9">@Model.ProjectId</dl>
+        
+        <a asp-action="Edit" asp-route-id="@Model.ProjectId" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to list</a>
+    </div>
+
+
+</div>
