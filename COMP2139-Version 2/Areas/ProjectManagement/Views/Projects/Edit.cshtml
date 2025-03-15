@@ -1,0 +1,30 @@
+﻿@model COMP2139_Friday.Areas.ProjectManagement.Models.Project
+
+<h2>Edit Project</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ProjectId" />
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div>
+        <label asp-for="StartDate"></label>
+        <input asp-for="StartDate" type="datetime-local" class="form-control" value="@Model.StartDate.ToString("yyyy-MM-ddTHH:mm")" />
+    </div>
+
+    <div>
+        <label asp-for="EndDate"></label>
+        <input asp-for="EndDate" type="datetime-local" class="form-control" value="@Model.EndDate.ToString("yyyy-MM-ddTHH:mm")" />
+    </div>
+
+    <button type="submit">Save Changes</button>
+    <a asp-action="Index">Cancel</a>
+</form>

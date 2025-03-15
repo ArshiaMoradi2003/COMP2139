@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>COMP2139_Friday</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\ProjectManagement\Views\Shared\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Projects\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Projects\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Projects\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Projects\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Projects\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ProjectTask\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ProjectTask\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ProjectTask\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ProjectTask\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\ProjectTask\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\About\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\Projects\Create.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\Projects\Delete.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\Projects\Details.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\Projects\Edit.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\Projects\Index.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\ProjectTask\Create.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\ProjectTask\Delete.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\ProjectTask\Details.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\ProjectTask\Edit.cshtml" />
+      <AdditionalFiles Include="Areas\ProjectManagement\Views\ProjectTask\Index.cshtml" />
+      <AdditionalFiles Include="Views\About\Index.cshtml" />
+    </ItemGroup>
+
+</Project>

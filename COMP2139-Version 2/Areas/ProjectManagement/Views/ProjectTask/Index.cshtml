@@ -1,0 +1,39 @@
+﻿@model IEnumerable<COMP2139_Friday.Areas.ProjectManagement.Models.ProjectTask>
+
+@{
+    ViewBag.Title = "Project Tasks";
+}
+
+<h2>Project Tasks</h2>
+
+<div>
+    <a asp-controller="ProjectTask" asp-action="Create" asp-route-projectId="@ViewBag.ProjectId" class="btn btn-primary">Create New Task</a>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@task.Title</td>
+            <td>@task.Description</td>
+            <td>
+                <a asp-controller="ProjectTask" asp-action="Details" asp-route-projectId="@task.ProjectId" asp-route-id="@task.ProjectTaskId" class="btn btn-info">View</a>
+
+                <a asp-controller="ProjectTask" asp-action="Edit" asp-route-projectId="@task.ProjectId" asp-route-id="@task.ProjectTaskId" class="btn btn-warning">Edit</a>
+
+                <a asp-controller="ProjectTask" asp-action="Delete" asp-route-projectId="@task.ProjectId" asp-route-id="@task.ProjectTaskId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-controller="Projects" asp-action="Index" class="btn btn-secondary">Back to Projects</a>

@@ -1,0 +1,54 @@
+﻿@model COMP2139_Friday.Areas.ProjectManagement.Models.ProjectTask
+
+@{
+    ViewBag.Title = "Create Task";
+}
+
+<h2>Create Task</h2>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<!-- Notice the asp-route-projectId attribute added here -->
+<form asp-controller="ProjectTask" asp-action="Create" asp-route-projectId="@ViewBag.ProjectId" method="post">
+    <!-- Hidden input ensures the ProjectId property is set on the model -->
+    <input type="hidden" asp-for="ProjectId" value="@ViewBag.ProjectId" />
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartDate" class="control-label"></label>
+        <input asp-for="StartDate" class="form-control" type="date" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EndDate" class="control-label"></label>
+        <input asp-for="EndDate" class="form-control" type="date" />
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status" class="form-control">
+            <option value="New">New</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create Task" class="btn btn-primary" />
+        <a asp-controller="ProjectTask" asp-action="Index" asp-route-projectId="@ViewBag.ProjectId" class="btn btn-secondary">Back to Task List</a>
+    </div>
+</form>

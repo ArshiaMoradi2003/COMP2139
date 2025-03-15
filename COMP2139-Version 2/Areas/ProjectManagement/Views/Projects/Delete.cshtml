@@ -1,0 +1,10 @@
+﻿@model COMP2139_Friday.Areas.ProjectManagement.Models.Project
+
+<h2>Delete Project</h2>
+<p>Are you sure you want to delete @Model.Name?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="ProjectId" />
+    <button type="submit">Confirm Delete</button>
+    <a asp-action="Index">Cancel</a>
+</form>

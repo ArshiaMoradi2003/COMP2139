@@ -1,0 +1,11 @@
+﻿@model IEnumerable<COMP2139_Friday.Areas.ProjectManagement.Models.Project>
+
+<div class="project-summary-container">
+    <h3>List of Projects:</h3>
+    <ul class ="project-summary-list">
+        @foreach (var project in Model)
+        {
+            <li><strong>@project.Name</strong> - @project.EndDate</li>
+        }
+    </ul>
+</div>

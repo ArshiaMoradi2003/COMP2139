@@ -1,0 +1,21 @@
+﻿@model COMP2139_Friday.Areas.ProjectManagement.Models.ProjectTask
+
+@{
+    ViewBag.Title = "Delete Task";
+}
+
+<h2>Delete Task</h2>
+
+<div class="alert alert-danger">
+    Are you sure you want to delete the task <strong>@Model.Title</strong>?
+</div>
+
+<form asp-controller="ProjectTask" asp-action="Delete" asp-route-projectId="@Model.ProjectId" asp-route-id="@Model.ProjectTaskId" method="post">
+    <input type="hidden" asp-for="ProjectTaskId" />
+    <input type="hidden" asp-for="ProjectId" />
+
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-controller="ProjectTask" asp-action="Index" asp-route-projectId="@Model.ProjectId" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

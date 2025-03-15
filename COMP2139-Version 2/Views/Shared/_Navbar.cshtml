@@ -1,0 +1,29 @@
+﻿
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><i class="fas fa-globe"></i> COMP2139 - GBC Project Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navigation Links -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/About">About</a></li>
+            </ul>
+            <!-- Search Form with Dropdown -->
+            <form class="d-flex ms-3" method="get" action="/Home/Search">
+                <div class="input-group">
+                    <select class="form-select" name="searchType">
+                        <option value="projects">Projects</option>
+                        <option value="tasks">Project Tasks</option>
+                    </select>
+                    <input class="form-control" type="search" name="searchTerm" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>

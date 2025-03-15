@@ -1,0 +1,37 @@
+﻿@model IEnumerable<COMP2139_Friday.Areas.ProjectManagement.Models.Project>
+
+@{
+    ViewBag.Title = "Project Search Results";
+    string searchTerm = ViewBag.SearchTerm ?? "";
+}
+
+<h2>Project Search Results</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">
+        No projects found for "@searchTerm".
+    </div>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.ProjectId</td>
+                <td>@project.Name</td>
+                <td>@project.Description</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
