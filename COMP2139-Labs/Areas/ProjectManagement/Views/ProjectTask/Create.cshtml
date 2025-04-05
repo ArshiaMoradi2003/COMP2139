@@ -1,0 +1,44 @@
+@model ProjectTask
+
+@{
+    ViewBag.Title = "Create Task";
+    Layout = "_Layout";
+}
+
+
+<h2>Create Task</h2>
+<form asp-action="Create" method="post">
+    <!-- Hidden field to preserve the ProjectId passed from the controller -->
+    @Html.HiddenFor(model => model.ProjectId)
+    
+
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description"  class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    
+
+   
+
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary"/>
+        <a asp-action="Index" asp-route-projectId="@Model.ProjectId" class="btn btn-warning">Cancel</a>
+    </div>
+
+
+</form>
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
